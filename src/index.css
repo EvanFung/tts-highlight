@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900;
+  }
+}
+
+@layer components {
+  .highlight-text {
+    position: relative;
+    --highlight-x: 0;
+    --highlight-y: 0;
+    --highlight-width: 0;
+    --highlight-height: 0;
+    transition: background-color 0.2s ease;
+  }
+
+  @supports (background: paint(highlight)) {
+    .highlight-text {
+      background-image: paint(highlight);
+    }
+  }
+}
